@@ -84,6 +84,8 @@ body{
     justify-content: center;
     gap: 40px;
     margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .img, .img1{
@@ -96,5 +98,3 @@ body{
 .img:hover{
     transform: scale(1.2);
 }
-
-
