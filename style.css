@@ -86,6 +86,7 @@ body{
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
+    background-color: rgba(128, 128, 128, 0);
 }
 
 .img, .img1{
@@ -93,6 +94,7 @@ body{
     -webkit-border-radius: 200px 200px 200px 200px;
     -moz-border-radius: 200px 200px 200px 200px;
     border: 6px solid #ffffff;
+    background-color: rgba(128, 128, 128, 0);
 }
 
 .img:hover{

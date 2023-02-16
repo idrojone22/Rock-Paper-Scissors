@@ -9,9 +9,12 @@ const primeraCartaComp = cartaComp[0];
 const segonaCartaComp = cartaComp[1];
 const terceraCartaComp = cartaComp[2];
 
+let win = 0;
+let lose = 0;
+
 
 let onlyOneOption = true;
-let carta1;
+let carta1 = null;
 
 // segonaCarta.style.removeProperty('background-color');
 
@@ -38,7 +41,6 @@ terceraCarta.addEventListener('click', () => {
 
 function comp() {
     let numeroRandom = Math.floor(Math.random() * 3);
-    console.log(numeroRandom);
     if (numeroRandom == 0) {
         primeraCartaComp.style.backgroundColor = 'red';
         setTimeout(() => {
@@ -79,30 +81,79 @@ function compararResultat() {
     //empates
     if (primeraCarta.style.backgroundColor == 'green' && primeraCartaComp.style.backgroundColor == 'red') {
         alert("empate");
+        primeraCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        primeraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        onlyOneOption = true;
+        carta1 = null;
     } else if (segonaCarta.style.backgroundColor == 'green' && segonaCartaComp.style.backgroundColor == 'red') {
         alert("empate");
+        segonaCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        segonaCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        onlyOneOption = true;
+        carta1 = null;
     } else if(terceraCarta.style.backgroundColor == 'green' && terceraCartaComp.style.backgroundColor == 'red') {
         alert("empate");
+        terceraCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        terceraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        onlyOneOption = true;
+        carta1 = null;
     };
 
     //piedra victoria
     if (primeraCarta.style.backgroundColor == 'green' && segonaCartaComp.style.backgroundColor == 'red') {
         alert('Has perdido');
+        lose++;
+        comp_score.innerHTML = `${lose}`;
+        primeraCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        segonaCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        onlyOneOption = true;
+        carta1 = null;
     } else if (primeraCarta.style.backgroundColor == 'green' && terceraCartaComp.style.backgroundColor == 'red') {
         alert ('Has ganado');
-    };
+        win++;
+        user_score.innerHTML = `${win}`;
+        primeraCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        terceraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        onlyOneOption = true;
+        carta1 = null;
+    }
 
     //papel victoria
     if (segonaCarta.style.backgroundColor == 'green' && terceraCartaComp.style.backgroundColor == 'red') {
         alert('Has perdido');
+        lose++;
+        comp_score.innerHTML = `${lose}`;
+        segonaCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        terceraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        onlyOneOption = true;
+        carta1 = null;
     } else if (segonaCarta.style.backgroundColor == 'green' && primeraCartaComp.style.backgroundColor == 'red') {
         alert ('Has ganado');
+        win++;
+        user_score.innerHTML = `${win}`;
+        segonaCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        primeraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        onlyOneOption = true;
+        carta1 = null;
     };
 
     //tijeras victoria
     if (terceraCarta.style.backgroundColor == 'green' && primeraCartaComp.style.backgroundColor == 'red') {
         alert('Has perdido');
+        lose++;
+        comp_score.innerHTML = `${lose}`;
+        terceraCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        primeraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        onlyOneOption = true;
+        carta1 = null;
+
     } else if (terceraCarta.style.backgroundColor == 'green' && segonaCartaComp.style.backgroundColor == 'red') {
         alert ('Has ganado');
+        win++;
+        user_score.innerHTML = `${win}`;
+        terceraCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        segonaCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+        onlyOneOption = true;
+        carta1 = null;
     };
 };
