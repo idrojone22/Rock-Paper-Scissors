@@ -16,8 +16,6 @@ let lose = 0;
 let onlyOneOption = true;
 let carta1 = null;
 
-// segonaCarta.style.removeProperty('background-color');
-
 primeraCarta.addEventListener('click', () => {
     carta1 = 1;
     solesunacarta()
@@ -35,7 +33,6 @@ terceraCarta.addEventListener('click', () => {
     solesunacarta()
     onlyOneOption = false;
 });
-
 
 // funciones
 
