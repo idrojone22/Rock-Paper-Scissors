@@ -85,18 +85,21 @@ function compararResultat() {
         primeraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         onlyOneOption = true;
         carta1 = null;
+        ganarPerder();
     } else if (segonaCarta.style.backgroundColor == 'green' && segonaCartaComp.style.backgroundColor == 'red') {
         alert("empate");
         segonaCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         segonaCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         onlyOneOption = true;
         carta1 = null;
+        ganarPerder();
     } else if(terceraCarta.style.backgroundColor == 'green' && terceraCartaComp.style.backgroundColor == 'red') {
         alert("empate");
         terceraCarta.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         terceraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         onlyOneOption = true;
         carta1 = null;
+        ganarPerder();
     };
 
     //piedra victoria
@@ -108,6 +111,7 @@ function compararResultat() {
         segonaCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         onlyOneOption = true;
         carta1 = null;
+        ganarPerder();
     } else if (primeraCarta.style.backgroundColor == 'green' && terceraCartaComp.style.backgroundColor == 'red') {
         alert ('Has ganado');
         win++;
@@ -116,7 +120,8 @@ function compararResultat() {
         terceraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         onlyOneOption = true;
         carta1 = null;
-    }
+        ganarPerder();
+    };
 
     //papel victoria
     if (segonaCarta.style.backgroundColor == 'green' && terceraCartaComp.style.backgroundColor == 'red') {
@@ -127,6 +132,7 @@ function compararResultat() {
         terceraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         onlyOneOption = true;
         carta1 = null;
+        ganarPerder();
     } else if (segonaCarta.style.backgroundColor == 'green' && primeraCartaComp.style.backgroundColor == 'red') {
         alert ('Has ganado');
         win++;
@@ -135,6 +141,7 @@ function compararResultat() {
         primeraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         onlyOneOption = true;
         carta1 = null;
+        ganarPerder();
     };
 
     //tijeras victoria
@@ -146,6 +153,7 @@ function compararResultat() {
         primeraCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         onlyOneOption = true;
         carta1 = null;
+        ganarPerder();
 
     } else if (terceraCarta.style.backgroundColor == 'green' && segonaCartaComp.style.backgroundColor == 'red') {
         alert ('Has ganado');
@@ -155,5 +163,25 @@ function compararResultat() {
         segonaCartaComp.style.backgroundColor = 'rgba(128, 128, 128, 0)';
         onlyOneOption = true;
         carta1 = null;
+        ganarPerder();
+    };
+};
+
+function ganarPerder() {
+    
+    if (win == 10) {
+        alert ('Has ganado a la máquina');
+        win = 0;
+        lose = 0;
+        user_score.innerHTML = `${win}`;
+        comp_score.innerHTML = `${lose}`;
+    }
+
+    if (lose == 10) {
+        alert ('La máquina te ha ganado');
+        win = 0;
+        lose = 0;
+        user_score.innerHTML = `${win}`;
+        comp_score.innerHTML = `${lose}`;
     };
 };
