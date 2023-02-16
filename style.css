@@ -113,4 +113,8 @@ body{
     .img, .img1{
         width: 70px;
     }
+
+    .img:hover{
+        transform: scale(1);
+    }
 }
