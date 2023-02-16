@@ -100,3 +100,17 @@ body{
 .img:hover{
     transform: scale(1.2);
 }
+
+/* media queries */
+
+@media (max-width: 700px) {
+    .img, .img1{
+        width: 100px;
+    }
+}
+
+@media (max-width: 520px) {
+    .img, .img1{
+        width: 70px;
+    }
+}
