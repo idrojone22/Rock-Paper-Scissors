@@ -95,6 +95,7 @@ body{
     -moz-border-radius: 200px 200px 200px 200px;
     border: 6px solid #ffffff;
     background-color: rgba(128, 128, 128, 0);
+    user-select: none;
 }
 
 .img:hover{
